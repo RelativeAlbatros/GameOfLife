@@ -6,6 +6,11 @@ GameOfLife: src/main.cpp src/Cell.cpp src/World.cpp
 run: GameOfLife 
 	./bin/GameOfLife 
 
+debug: src/main.cpp src/Cell.cpp src/World.cpp
+	g++ -g -pedantic -Wall -Werror -std=c++11 -lncurses -o bin/$@ $?
+	@echo finished debugging. checking code
+	cppcheck --enable=all --inconclusive -v --suppress=missingIncludeSystem src/
+
 install: GameOfLife 
 	mv bin/GameOfLife ${PREFIX}/bin/ 
 
