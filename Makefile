@@ -15,4 +15,4 @@ install: GameOfLife
 	mv bin/GameOfLife ${PREFIX}/bin/ 
 
 clean: 
-	rm -f bin/GameOfLife 
+	rm -f bin/*
